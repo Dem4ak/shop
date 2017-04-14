@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>Title</title>
+
+</head>
+<body>
+<div class="container">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"/></a>
+        </div><!--end logo-->
+        <div id="contact_details">
+            <p><a href="#">support@yoursite.com</a></p>
+            <p><a href="#">phone : 555-534-231</a></p>
+        </div><!--end contact details-->
+    </div><!--end header-->
+    <div style="clear:both"></div>
+    <div id="main">
+        <div id="content">
+            <div class="text">
+                <h2>This website is under construction</h2>
+            </div><!--end text-->
+            <div class="counter">
+                <h3>Estimated Time Remaining Before Launch:</h3>
+                <div id="defaultCountdown"></div>
+            </div><!--end counter-->
+            <div class="details">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="input_email">
+                        <label for="{{ form.email.id }}">{{ form.email.label }}</label>
+                        <input type="email" name="{{ form.email.name }}" placeholder="{{ form.email.label }}">
+                    </div>
+                    <div class="input_email">
+                        <label for="{{ form.name.id }}">{{ form.name.label }}</label>
+                        <input type="text" name="{{ form.name.name }}" placeholder="{{ form.name.label }}">
+                    </div>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div><!--end details-->
+        </div><!--end content-->
+        {{ name }}
+        <p class="copyright">Copyright &copy; My Website. All rights selected</p>
+    </div><!--end main-->
+</div><!--end class container-->
+
+</body>
+</html>
